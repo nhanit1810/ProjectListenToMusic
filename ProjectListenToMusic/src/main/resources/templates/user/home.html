@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Music Player</title>
+	<link rel="stylesheet" href="/user/css/home.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+	<!-- Navigation Bar -->
+	<nav class="navbar">
+		<div class="logo">Logo</div>
+		<div class="search-bar">
+			<input type="text" placeholder="Tìm kiếm...">
+			<i class="fas fa-search"></i>
+		</div>
+		<div class="auth-buttons">
+			<button>Đăng ký</button>
+			<button>Đăng nhập</button>
+		</div>
+	</nav>
+
+	<!-- Main Layout -->
+	<div class="container">
+		<!-- Sidebar -->
+		<aside class="sidebar">
+			<div class="textlibrary">Thư Viện</div>
+			<div class="library">
+				<button>Danh sách phát của bạn</button>
+				<div id="your-list">
+					<button>Hiếu thứ hai</button>
+					<button>Anh trai vượt ngàn chông gai</button>
+					<button>Anh trai say hi</button>
+					<button>Tạo danh sách phát mới</button>
+				</div>
+			</div>
+			<div class="menu">
+				<button>BXH Nhạc Mới</button>
+				<button>Chủ đề & Thể loại</button>
+				<button>Top 100</button>
+			</div>
+		</aside>
+
+		<!-- Content Section -->
+		<main class="content">
+			<section class="top-trending">
+				<h2>Top Thịnh Hành</h2>
+				<div class="trending-list">
+					<div class="trending-item">
+						<img src="../images/AnhTraiSayHi.jpg" alt="Anh Trai Say Hi">
+						<p>ANH TRAI "SAY HI"</p>
+					</div>
+					<div class="trending-item">
+						<img src="../images/AnhTraiSayHi.jpg" alt="Anh Trai Say Hi">
+						<p>ANH TRAI "SAY HI"</p>
+					</div>
+					<div class="trending-item">
+						<img src="../images/AnhTraiSayHi.jpg" alt="Anh Trai Say Hi">
+						<p>ANH TRAI "SAY HI"</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="new-releases">
+				<h2>Mới Phát Hành</h2>
+				<div class="release-list">
+					<div class="release-item">
+						<img src="../images/AnhTraiSayHi.jpg" alt="Không Thể Say">
+						<p>KHÔNG THỂ SAY - HIEUTHUHAI</p>
+					</div>
+					<div class="release-item">
+						<img src="../images/AnhTraiSayHi.jpg" alt="Không Thể Say">
+						<p>KHÔNG THỂ SAY - HIEUTHUHAI</p>
+					</div>
+					<div class="release-item">
+						<img src="../images/AnhTraiSayHi.jpg" alt="Không Thể Say">
+						<p>KHÔNG THỂ SAY - HIEUTHUHAI</p>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<!-- Music Player -->
+	<footer class="music-player">
+		<div class="top-section">
+			<div class="song-info">
+				<img src="../images/KhongTheSay_HieuThuHai.png" alt="Album cover">
+				<p>KHÔNG THỂ SAY - HIEUTHUHAI</p>
+			</div>
+			<div class="player-controls">
+				<button><i class="fa fa-random"></i></button>
+				<button id="prev-btn"><i class="fas fa-backward"></i></button>
+				<button id="play-pause-btn"><i class="fas fa-play"></i></button>
+				<button id="next-btn"><i class="fas fa-forward"></i></button>
+				<button><i class="fa fa-retweet"></i></button>
+			</div>
+		</div>
+		<div class="progress-bar">
+			<span id="current-time">00:00</span>
+			<input type="range" id="progress" value="0" max="100">
+			<span id="duration">04:14</span>
+		</div>
+	</footer>
+
+	<!-- JavaScript -->
+	<script src="/user/js/home.js"></script>
+</body>
+
+</html>
