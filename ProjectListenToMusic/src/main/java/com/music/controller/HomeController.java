@@ -11,5 +11,14 @@ public class HomeController {
 		return "user/home";
 	}
 	
+	@GetMapping("/signIn")
+	public String signIn() {
+		return "user/signIn";
+	}
+	
+	@GetMapping("/signUp")
+	public String signUp() {
+		return "user/signUp";
+	}
 	
 }

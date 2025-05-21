@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Đăng ký</title>
+<link rel="stylesheet" href="/user/css/signUp.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Nhúng thư viện angularJS -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<!-- JavaScript -->
+<script src="/user/js/authApp.js"></script>
+</head>
+
+<body ng-app="authApp">
+	<div class="register-container" ng-controller="RegisterController">
+		<h2>Đăng Ký Tài Khoản Mới</h2>
+		<form name="registerForm" ng-submit="register()" novalidate>
+			<div class="form-group">
+				<label for="regUsername">Tài khoản:</label> <input type="text"
+					id="regUsername" ng-model="user.username" name="username" required
+					minlength="4"> <span class="error-message"
+					ng-show="registerForm.username.$dirty && registerForm.username.$error.required">Tài
+					khoản không được để trống.</span> <span class="error-message"
+					ng-show="registerForm.username.$dirty && registerForm.username.$error.minlength">Tài
+					khoản phải có ít nhất 4 ký tự.</span>
+			</div>
+			<div class="form-group">
+				<label for="regPassword">Mật khẩu:</label> <input type="password"
+					id="regPassword" ng-model="user.password" name="password" required
+					minlength="6"> <span class="error-message"
+					ng-show="registerForm.password.$dirty && registerForm.password.$error.required">Mật
+					khẩu không được để trống.</span> <span class="error-message"
+					ng-show="registerForm.password.$dirty && registerForm.password.$error.minlength">Mật
+					khẩu phải có ít nhất 6 ký tự.</span>
+			</div>
+			<div class="form-group">
+				<label for="confirmPassword">Xác nhận mật khẩu:</label> <input
+					type="password" id="confirmPassword"
+					ng-model="user.confirmPassword" name="confirmPassword" required>
+				<span class="error-message"
+					ng-show="registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$error.required">Xác
+					nhận mật khẩu không được để trống.</span> <span class="error-message"
+					ng-show="user.password !== user.confirmPassword && registerForm.confirmPassword.$dirty">Mật
+					khẩu xác nhận không khớp.</span>
+			</div>
+			<button type="submit"
+				ng-disabled="registerForm.$invalid || user.password !== user.confirmPassword">Đăng
+				Ký</button>
+		</form>
+
+		<p class="success-message" ng-if="registrationSuccess">
+			Đăng ký thành công! <br> Tài khoản: {{ user.username }}
+		</p>
+	</div>
+</body>
+</html>
